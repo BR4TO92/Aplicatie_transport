@@ -1,6 +1,7 @@
 # Aplicatie_transport
 
 Problema:
+
 Actorii principali din problema sunt urmatorii :
 Userul : el interactioneaza cu aplicatia (in mod text sau grafic, cum preferi). El spune cat are de transportat si ce prioritate are la transport (are de ales
 intre foarte urgent, urgent, normal, ieftin).
