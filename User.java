@@ -1,22 +1,48 @@
 
+/**
+ * @author Daniel Bratosin
+ *
+ */
 public class User
 {
-	private byte prioritate;
-	private int cantitatePaleti;
+	private byte priorityLevel;
+	private int quantity;
 	
-	User(int cantitatePaleti, byte prioritate)
+	User(int quantity, byte priorityLevel)
 	{
-		this.cantitatePaleti = cantitatePaleti;
-		this.prioritate = prioritate;
+		this.quantity = quantity;
+		this.priorityLevel = priorityLevel;
 	}
 
-	public byte getPrioritate()
+	/**
+	 * @return the priority level
+	 */
+	public byte getPriorityLevel()
 	{
-		return this.prioritate;
+		return this.priorityLevel;
 	}
 	
-	public int getCantitatePaleti()
+	/**
+	 * @param priorityLevel Sets a new priority level for an user object
+	 */
+	public void setPriorityLevel(byte priorityLevel)
 	{
-		return this.cantitatePaleti;
+		this.priorityLevel = priorityLevel;
+	}
+	
+	/**
+	 * @return the quantity of the pallets
+	 */
+	public int getQuantity()
+	{
+		return this.quantity;
+	}
+	
+	/**
+	 * @param quantity Sets a new quantity of the pallets for an user object
+	 */
+	public void setQuantity(int quantity)
+	{
+		this.quantity = quantity;
 	}
 }
