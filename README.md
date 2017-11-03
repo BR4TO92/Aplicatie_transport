@@ -24,9 +24,7 @@ Implementare (observatii):
 - o clasa BrokerDeTransport si o clasa User
 - toate computatiile pe baza unui singur User se vor face intr-o instanta a clasei BrokerDeTransport
 - mijlocul de transport a fost ales din punct de vedere al pretului cel mai scazut
-- pretul pentru un mijloc de transport a fost stabilit fix, desi e loc de interpretari (se poate modifica si in functie de cantitate sau o distanta data)
+- pretul pentru un mijloc de transport a fost stabilit in functie de un pretul pe palet (cantitate) pentru fiecare vehicul in parte; (se poate modifica si dupa o distanta data)
 - tariful pentru prioritate a fost stabilit fix
-- pentru fiecare client diferit am ales sa se creeze o instanta diferita, pentru a putea imbunatati ulterior programul pentru afisarea unui istoric de comenzi
-  pentru fiecare client;
-- pentru o aplicatie grafica, propun aplicatie JavaFX formata dintr-o fereastra din care se va introduce un nume, intr-un textBox, un pret, intr-un textBox,
-  si o prioritate intr-un comboBox.
+- pentru fiecare client diferit am ales sa se creeze o instanta diferita, pentru a putea imbunatati ulterior programul pentru afisarea unui istoric de comenzi pentru fiecare client;
+- pentru o aplicatie grafica, propun aplicatie JavaFX formata dintr-o fereastra din care se va introduce un nume, intr-un textBox, un pret, intr-un textBox si o prioritate intr-un comboBox.
