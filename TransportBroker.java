@@ -7,7 +7,7 @@ public class TransportBroker
 {
 	@SuppressWarnings("unused")
 	private UserRequest userRequest;
-	private int lowestPrice = 0;
+	private int price = 0;
 	private String transportVehicle = "";
 	
 	/**
@@ -19,9 +19,9 @@ public class TransportBroker
 		this.userRequest = userRequest;
 	}
 	
-	public int getLowestPrice()
+	public int getPrice()
 	{
-		return this.lowestPrice;
+		return this.price;
 	}
 	
     public String getTransportVehicle()
@@ -90,7 +90,7 @@ public class TransportBroker
 		
 		costForShip = EnumPalletRateForVehicle.PALLET_RATE_FOR_SHIP.getPalletRateForVehicle() * quantity + costForPriorityLevel;
 		
-		this.lowestPrice = costForShip;
+		this.price = costForShip;
 		this.transportVehicle = EnumTransportVehicle.SHIP.getTransportVehicle();
 	}
 
@@ -112,13 +112,13 @@ public class TransportBroker
 		
 		if(isSpeedEfficient)
 		{
-			this.lowestPrice = costForTruck;
+			this.price = costForTruck;
 			this.transportVehicle = EnumTransportVehicle.TRUCK.getTransportVehicle();
 		}
 		
 		else
 		{
-			this.lowestPrice = costForTrain;
+			this.price = costForTrain;
 			this.transportVehicle = EnumTransportVehicle.TRAIN.getTransportVehicle();
 		}
 	}
@@ -143,13 +143,13 @@ public class TransportBroker
 		
 		if(isSpeedEfficient)
 		{
-			this.lowestPrice = costForHelicopter;
+			this.price = costForHelicopter;
 			this.transportVehicle = EnumTransportVehicle.HELICOPTER.getTransportVehicle();
 		}
 		
 		else
 		{
-			this.lowestPrice = costForCar;
+			this.price = costForCar;
 			this.transportVehicle = EnumTransportVehicle.CAR.getTransportVehicle();
 		}
 	}

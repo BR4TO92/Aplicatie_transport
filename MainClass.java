@@ -142,7 +142,7 @@ public class MainClass
 		transportBroker.setUser(userRequest);
 		transportBroker.computeLowestPrice(userRequest, isSpeedEfficient);
 		
-		lowestPrice = transportBroker.getLowestPrice();
+		lowestPrice = transportBroker.getPrice();
 		transportVehicle = transportBroker.getTransportVehicle();
 		
 		result(lowestPrice, transportVehicle);
