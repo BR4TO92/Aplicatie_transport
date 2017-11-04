@@ -21,10 +21,9 @@ Nu sunt niste constrangeri fixe de care trebuie neaparat sa te tii in implementa
 Ar fi frumos sa folosesti un strategy pattern pentru, dar chiar fara e ok.
 
 Implementare (observatii):
-- o clasa BrokerDeTransport si o clasa User
-- toate computatiile pe baza unui singur User se vor face intr-o instanta a clasei BrokerDeTransport
-- mijlocul de transport a fost ales din punct de vedere al pretului cel mai scazut
-- pretul pentru un mijloc de transport a fost stabilit in functie de un pretul pe palet (cantitate) pentru fiecare vehicul in parte; (se poate modifica si dupa o distanta data)
+- toate computatiile pe baza unui singur User se vor face intr-o instanta a clasei TransportBroker
+- mijlocul de transport se alege fie pe baza pretului cel mai scazut, fie vitezei cele mai ridicate
+- pretul pentru un mijloc de transport a fost stabilit in functie de un pretul pe palet (cantitate) pentru fiecare vehicul in parte; (ulterior se poate calcula si in functie de o distanta data)
 - tariful pentru prioritate a fost stabilit fix
-- pentru fiecare client diferit am ales sa se creeze o instanta diferita, pentru a putea imbunatati ulterior programul pentru afisarea unui istoric de comenzi pentru fiecare client;
-- pentru o aplicatie grafica, propun aplicatie JavaFX formata dintr-o fereastra din care se va introduce un nume, intr-un textBox, un pret, intr-un textBox si o prioritate intr-un comboBox.
+- pentru fiecare client diferit am ales sa se creeze o instanta diferita, pentru a putea imbunatati ulterior programul pentru afisarea unui istoric de comenzi pentru fiecare client in parte;
+- pentru o aplicatie grafica, propun o aplicatie JavaFX formata dintr-o fereastra din care se va introduce un nume si un pret (fiecare in cate un textBox), o prioritate (dintr-o lista tip comboBox) si o optiune de a alege cel mai rapid vehicul (checkbox). Un buton va calcula pretul si va afisa intr-o fereastra noua pretul si vehiculul folosit pentru transport.
