@@ -42,24 +42,24 @@ public class TransportBroker
 		int quantity = userRequest.getQuantity();
 		int costForPriorityLevel;
 		
-		if(priorityLevel == EnumPriorityLevel.VERY_URGENT.getPriorityLevel())
+		if(priorityLevel == PriorityLevel.VERY_URGENT.getPriorityLevel())
 		{
-			costForPriorityLevel = EnumRateForEmergencyLevel.VERY_URGENT_RATE.getRateForEmergencyLevel();
+			costForPriorityLevel = RateForEmergencyLevel.VERY_URGENT_RATE.getRateForEmergencyLevel();
 		}
 		
-		else if(priorityLevel == EnumPriorityLevel.URGENT.getPriorityLevel())
+		else if(priorityLevel == PriorityLevel.URGENT.getPriorityLevel())
 		{
-			costForPriorityLevel = EnumRateForEmergencyLevel.URGENT_RATE.getRateForEmergencyLevel();
+			costForPriorityLevel = RateForEmergencyLevel.URGENT_RATE.getRateForEmergencyLevel();
 		}
 		
-		else if(priorityLevel == EnumPriorityLevel.NORMAL.getPriorityLevel())
+		else if(priorityLevel == PriorityLevel.NORMAL.getPriorityLevel())
 		{
-			costForPriorityLevel = EnumRateForEmergencyLevel.NORMAL_RATE.getRateForEmergencyLevel();
+			costForPriorityLevel = RateForEmergencyLevel.NORMAL_RATE.getRateForEmergencyLevel();
 		}
 		
 		else
 		{
-			costForPriorityLevel = EnumRateForEmergencyLevel.LOW_RATE.getRateForEmergencyLevel();
+			costForPriorityLevel = RateForEmergencyLevel.LOW_RATE.getRateForEmergencyLevel();
 		}
 		
 		if(quantity == 1)
@@ -88,10 +88,10 @@ public class TransportBroker
 	{
 		int costForShip;
 		
-		costForShip = EnumPalletRateForVehicle.PALLET_RATE_FOR_SHIP.getPalletRateForVehicle() * quantity + costForPriorityLevel;
+		costForShip = PalletRateForVehicle.PALLET_RATE_FOR_SHIP.getPalletRateForVehicle() * quantity + costForPriorityLevel;
 		
 		this.price = costForShip;
-		this.transportVehicle = EnumTransportVehicle.SHIP.getTransportVehicle();
+		this.transportVehicle = TransportVehicle.SHIP.getTransportVehicle();
 	}
 
 	/**
@@ -107,19 +107,19 @@ public class TransportBroker
 		int costForTrain;
 		int costForTruck;
 		
-		costForTrain = EnumPalletRateForVehicle.PALLET_RATE_FOR_TRAIN.getPalletRateForVehicle() * quantity + costForPriorityLevel;
-		costForTruck = EnumPalletRateForVehicle.PALLET_RATE_FOR_TRUCK.getPalletRateForVehicle() * quantity + costForPriorityLevel;
+		costForTrain = PalletRateForVehicle.PALLET_RATE_FOR_TRAIN.getPalletRateForVehicle() * quantity + costForPriorityLevel;
+		costForTruck = PalletRateForVehicle.PALLET_RATE_FOR_TRUCK.getPalletRateForVehicle() * quantity + costForPriorityLevel;
 		
 		if(isSpeedEfficient)
 		{
 			this.price = costForTruck;
-			this.transportVehicle = EnumTransportVehicle.TRUCK.getTransportVehicle();
+			this.transportVehicle = TransportVehicle.TRUCK.getTransportVehicle();
 		}
 		
 		else
 		{
 			this.price = costForTrain;
-			this.transportVehicle = EnumTransportVehicle.TRAIN.getTransportVehicle();
+			this.transportVehicle = TransportVehicle.TRAIN.getTransportVehicle();
 		}
 	}
 
@@ -137,20 +137,20 @@ public class TransportBroker
 		int costForPlane;
 		int costForHelicopter;
 		
-		costForCar = EnumPalletRateForVehicle.PALLET_RATE_FOR_CAR.getPalletRateForVehicle() * quantity + costForPriorityLevel;
-		costForPlane = EnumPalletRateForVehicle.PALLET_RATE_FOR_PLANE.getPalletRateForVehicle() * quantity + costForPriorityLevel;
-		costForHelicopter = EnumPalletRateForVehicle.PALLET_RATE_FOR_HELICOPTER.getPalletRateForVehicle() * quantity + costForPriorityLevel;
+		costForCar = PalletRateForVehicle.PALLET_RATE_FOR_CAR.getPalletRateForVehicle() * quantity + costForPriorityLevel;
+		costForPlane = PalletRateForVehicle.PALLET_RATE_FOR_PLANE.getPalletRateForVehicle() * quantity + costForPriorityLevel;
+		costForHelicopter = PalletRateForVehicle.PALLET_RATE_FOR_HELICOPTER.getPalletRateForVehicle() * quantity + costForPriorityLevel;
 		
 		if(isSpeedEfficient)
 		{
 			this.price = costForHelicopter;
-			this.transportVehicle = EnumTransportVehicle.HELICOPTER.getTransportVehicle();
+			this.transportVehicle = TransportVehicle.HELICOPTER.getTransportVehicle();
 		}
 		
 		else
 		{
 			this.price = costForCar;
-			this.transportVehicle = EnumTransportVehicle.CAR.getTransportVehicle();
+			this.transportVehicle = TransportVehicle.CAR.getTransportVehicle();
 		}
 	}
 }

@@ -42,14 +42,14 @@ public class MainClass
 					yesOrNoAnswer = userInput.next();
 					System.out.print("\n");
 					
-					if(yesOrNoAnswer.equals("Y"))
+					if(yesOrNoAnswer.equalsIgnoreCase("Y"))
 					{
 						isNewUser = false;
 						showFinalResult(brokerDeTransport, userName, listOfExistingUsers, userInput, isNewUser);
 						programResume(programResumeCondition);
 					}
 					
-					if(yesOrNoAnswer.equals("n"))
+					if(yesOrNoAnswer.equalsIgnoreCase("n"))
 					{
 						isNewUser = true;
 						
@@ -69,7 +69,7 @@ public class MainClass
 					programResume(programResumeCondition);
 				}
 			}
-		} while (!programResumeCondition.equals("n"));
+		} while (!programResumeCondition.equalsIgnoreCase("n"));
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class MainClass
 		programResumeCondition = userInput.next();
 		System.out.print("\n");
 		
-		if(programResumeCondition.equals("n"))
+		if(programResumeCondition.equalsIgnoreCase("n"))
 		{
 			System.exit(0);
 		}
@@ -116,7 +116,7 @@ public class MainClass
 		System.out.print("Do you want to use the fastest possible vehicle for transporting this quantity? Y/n: ");
 		speedEfficiencyInput = userInput.next();
 		
-		if(speedEfficiencyInput.equals("Y"))
+		if(speedEfficiencyInput.equalsIgnoreCase("Y"))
 		{
 			isSpeedEfficient = true;
 		}
